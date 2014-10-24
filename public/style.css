@@ -1,0 +1,8 @@
+@import url(http://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(http://fonts.googleapis.com/css?family=Pacifico);
+p{font-family: 'Montserrat', sans-serif;}
+label{font-family: 'Montserrat', sans-serif;}
+h2 {font-family: 'Pacifico', cursive;color:orange;font-size:30px; text-align: center;}
+h4 {font-family: 'Montserrat', cursive;color:green;font-size:20px; line-height: 10px;}
+a {text-decoration: none; color:orange;}
+body {padding:100px;}
