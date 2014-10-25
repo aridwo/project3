@@ -5,11 +5,10 @@ Lorem Ipsum Generator
 @section('content')
 {{ Form::open(array('url' => '/loremipsum', 'method' => 'POST')) }}
 <h4>Lorem Ipsum Generator</h4>
-<br />
 @if ($errors->has())
-<label>Paragraphs (10 max)
+<p>Number of Paragraphs (10 max):
 {{ Form::text('paragraph_number', $paragraph_number, array('class' => 'error')) }}
-</label>
+</p>
 <small>
 @foreach ($errors->all() as $message)
 {{ $message }}
@@ -20,8 +19,7 @@ Lorem Ipsum Generator
 {{ Form::text('paragraph_number', $paragraph_number) }}
 </label>
 @endif
-<br />
-{{ Form::submit('Generate', array('class' => 'small button radius')) }}
+{{ Form::submit('Generate', array()) }}
 {{ Form::close() }}
 <br />
 @foreach ($paragraphs as $paragraph)

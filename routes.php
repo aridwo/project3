@@ -10,11 +10,10 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
-/* Lorem Ipsum Gen */
 Route::get('/', function()
 {
-	return View::make('index');});
+	return View::make('index');
+});
 
 Route::get('/loremipsum/{paragraph_number?}', function($paragraph_number = 1)
 {
@@ -35,14 +34,12 @@ if ($validator->passes()) {
 return View::make('loremipsum', $data);}
 return Redirect::to('/loremipsum')->withErrors($validator);});
 
-
-/* Random User Gen */
-Route::get('/randomuser/{user_number?}', function($user_number = 1)
+Route::get('/randomuser/{user_count?}', function($user_count = 1)
 {
 	$faker = Faker::create();
-	$data['user_number'] = $user_number;
-	
-for ($i=0; $i <= $user_number - 1; $i++) { 
+	$data['user_count'] = $user_count;
+
+for ($i=0; $i <= $user_count - 1; $i++) { 
 		$user = array(
 			'first_name' => $faker->firstName(),
 			'last_name' => $faker->lastName(),
@@ -56,17 +53,16 @@ $data['users'][$i] = $user;
 return View::make('randomuser', $data);});
 Route::post('/randomuser', function()
 {
-	$data['user_number'] = Input::get('user_number');
-	
+	$data['user_count'] = Input::get('user_count');
 	$rules = array(
-'user_number' => array('integer', 'min:1', 'max:10')
+'user_count' => array('integer', 'min:1', 'max:10')
 	);
 	$validator = Validator::make($data, $rules);
 if ($validator->passes()) {
 	$faker = Faker::create();
-for ($i=0; $i <= $data['user_number'] - 1; $i++) { 
+for ($i=0; $i <= $data['user_count'] - 1; $i++) { 
 	$user = array(
-			'first_name' => $faker->firstName(),
+					'first_name' => $faker->firstName(),
 			'last_name' => $faker->lastName(),
 			'street' => $faker->streetAddress(),
 			'city' => $faker->city(),
