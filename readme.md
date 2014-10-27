@@ -6,6 +6,8 @@ Demo Information: http://screencast.com/t/AZka2ucP
 
 Packages:
 Paste/Pre - https://packagist.org/packages/paste/pre - debugger that prints cleanly to screen
+
 Fzaninotto/Faker - https://packagist.org/packages/fzaninotto/faker - Fake Data Generator 
+
 Badcow/Lorem-Ipsum - https://packagist.org/packages/badcow/lorem-ipsum - Lorem Ipsum generator
 
